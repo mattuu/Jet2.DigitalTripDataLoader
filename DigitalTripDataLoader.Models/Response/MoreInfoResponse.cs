@@ -2,7 +2,6 @@
 {
     public class MoreInfoResponse : ResponseBase
     {
-        public Property[] Properties { get; set; }
-
+        public MoreInfo MoreInfo { get; set; }
     }
 }

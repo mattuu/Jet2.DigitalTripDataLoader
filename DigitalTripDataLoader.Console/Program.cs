@@ -1,6 +1,6 @@
-﻿using System;
+﻿using System.IO;
 using System.Linq;
-using DigitalTripDataLoader.Service;
+using DigitalTripDataLoader.Models.Request;
 using DigitalTripDataLoader.Service.Callers;
 using DigitalTripDataLoader.Service.Serializers;
 
@@ -10,23 +10,35 @@ namespace DigitalTripDataLoader.Console
     {
         static void Main(string[] args)
         {
+            var getPropertiesCaller = new GetPropertiesCaller(new EmptyRequestXmlSerializer());
 
-            var caller = new GetPropertiesCaller(new EmptyRequestSeriazlier());
-
-            var response = caller.Call();
-
-            //var loader = new LoaderService(new MoreInfoRequestXmlSerializer());
-
-            //const int id = 145;
-            //var guid = Guid.Parse("67e5733e-919d-436a-af55-18c8b3c1eab7");
-
-            //var moreInfoResponse = loader.Load(id, guid);
+            var response = getPropertiesCaller.Call();
 
             System.Console.WriteLine($"Loaded {response.Properties.Count()} properties");
 
             foreach (var property in response.Properties)
             {
                 System.Console.WriteLine($"Property {property.PropertyId} with name {property.PropertyName}");
+
+                var moreInfoCaller = new MoreInformationCaller(new MoreInformationRequestXmlSerializer());
+                var moreInfoResponse = moreInfoCaller.Call(new MoreInformationRequest
+                {
+                    Id = property.PropertyId
+                });
+
+                var path = $"C:\\temp\\DigitalTrip\\{property.PropertyId}_{property.PropertyName}.txt";
+                if (File.Exists(path))
+                {
+                    File.Delete(path);
+                }
+
+                using (var streamWriter = File.CreateText(path))
+                {
+                    foreach (var infoItem in moreInfoResponse.MoreInfo.Information)
+                    {
+                        streamWriter.WriteLine($"Attribute: {infoItem.InfoName}, Value: {infoItem.InfoValue}");
+                    }
+                }
             }
 
             System.Console.ReadLine();

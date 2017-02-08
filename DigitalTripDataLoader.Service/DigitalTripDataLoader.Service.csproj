@@ -40,11 +40,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Callers\CallerBase.cs" />
     <Compile Include="Callers\GetPropertiesCaller.cs" />
+    <Compile Include="Callers\MoreInformationCaller.cs" />
     <Compile Include="InvalidCredentialsException.cs" />
     <Compile Include="LoaderService.cs" />
-    <Compile Include="Serializers\EmptyRequestSeriazlier.cs" />
-    <Compile Include="Serializers\IMoreInformationRequestXmlSerializer.cs" />
+    <Compile Include="Serializers\EmptyRequestXmlSerializer.cs" />
     <Compile Include="Serializers\IRequestXmlSerializer.cs" />
     <Compile Include="Serializers\MoreInformationRequestXmlSerializer.cs" />
     <Compile Include="Serializers\MoreInfoRequestXmlSerializer.cs" />

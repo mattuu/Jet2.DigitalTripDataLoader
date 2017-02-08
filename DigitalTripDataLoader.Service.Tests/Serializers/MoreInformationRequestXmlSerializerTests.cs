@@ -1,4 +1,5 @@
-﻿using DigitalTripDataLoader.Service.Serializers;
+﻿using DigitalTripDataLoader.Models.Request;
+using DigitalTripDataLoader.Service.Serializers;
 using Ploeh.AutoFixture.Idioms;
 using Shouldly;
 using Xunit;
@@ -15,17 +16,17 @@ namespace DigitalTripDataLoader.Service.Tests.Serializers
         }
 
         [Theory, AutoMoqData]
-        public void GetXml_ShouldReturnCorrectResult(int id, MoreInformationRequestXmlSerializer sut)
+        public void Serialize_ShouldReturnCorrectResult(MoreInformationRequest request, MoreInformationRequestXmlSerializer sut)
         {
             // act..
-            var actual = sut.GetXml(id);
+            var actual = sut.Serialize(request);
 
             // assert..
             const string format = @"<MoreInformationRequest>
   <ID>{0}</ID>
 </MoreInformationRequest>";
 
-            var expected = string.Format(format, id);
+            var expected = string.Format(format, request.Id);
 
             actual.ShouldBe(expected);
         }

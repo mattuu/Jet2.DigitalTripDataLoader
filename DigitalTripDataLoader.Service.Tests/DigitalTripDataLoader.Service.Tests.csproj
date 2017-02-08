@@ -104,6 +104,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DigitalTripDataLoader.Models\DigitalTripDataLoader.Models.csproj">
+      <Project>{fb43c732-888c-4bc0-8972-6f060809aad0}</Project>
+      <Name>DigitalTripDataLoader.Models</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DigitalTripDataLoader.Service\DigitalTripDataLoader.Service.csproj">
       <Project>{3E38FB22-AE41-45A8-8312-DC711BC2864C}</Project>
       <Name>DigitalTripDataLoader.Service</Name>

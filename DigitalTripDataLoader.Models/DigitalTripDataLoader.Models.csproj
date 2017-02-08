@@ -40,12 +40,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Request\EmptyRequest.cs" />
     <Compile Include="Request\MoreInfoRequest.cs" />
     <Compile Include="Request\MoreInformationRequest.cs" />
     <Compile Include="Response\Attribute.cs" />
     <Compile Include="Response\BanksProperty.cs" />
+    <Compile Include="Response\Image.cs" />
+    <Compile Include="Response\InfoItem.cs" />
     <Compile Include="Response\InvalidCredentialsResponse.cs" />
     <Compile Include="Response\GetPropertiesResponse.cs" />
+    <Compile Include="Response\MoreInfo.cs" />
     <Compile Include="Response\MoreInfoResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Response\Property.cs" />

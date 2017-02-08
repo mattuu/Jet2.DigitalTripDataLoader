@@ -8,13 +8,15 @@ using DigitalTripDataLoader.Service.Serializers;
 
 namespace DigitalTripDataLoader.Service.Callers
 {
-    public abstract class CallerBase<TResponse, TRequestSerializer>
+    public abstract class CallerBase<TResponse, TRequestSerializer, TInputData> : IDisposable
         where TResponse : ResponseBase
-        where TRequestSerializer : IRequestXmlSerializer
+        where TRequestSerializer : IRequestXmlSerializer<TInputData>
     {
         private readonly string _actionHeader;
         private readonly TRequestSerializer _requestSerializer;
+        private bool _disposed;
         private HttpWebRequest _request;
+        private Stream _requestStream;
 
         protected CallerBase(TRequestSerializer requestSerializer, string actionHeader)
         {
@@ -24,15 +26,25 @@ namespace DigitalTripDataLoader.Service.Callers
             _actionHeader = actionHeader;
         }
 
-        protected HttpWebRequest Request => _request ?? (_request = ConfigureRequest(_actionHeader));
+        private HttpWebRequest Request => _request ?? (_request = ConfigureRequest(_actionHeader));
 
-        public virtual TResponse Call()
+        public void Dispose()
         {
-            var body = _requestSerializer.Serialize();
-
-            using (var requestStream = Request.GetRequestStream())
+            if (!_disposed)
             {
-                using (var writer = new StreamWriter(requestStream))
+                _requestStream.Dispose();
+                _disposed = true;
+            }
+        }
+
+        public virtual TResponse Call(TInputData data = default(TInputData))
+        {
+            var body = _requestSerializer.Serialize(data);
+
+            _requestStream = Request.GetRequestStream();
+            using (_requestStream)
+            {
+                using (var writer = new StreamWriter(_requestStream))
                 {
                     writer.Write(body);
                 }

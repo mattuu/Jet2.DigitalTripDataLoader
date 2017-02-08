@@ -4,13 +4,13 @@ using System.Xml.Serialization;
 
 namespace DigitalTripDataLoader.Service.Serializers
 {
-    public abstract class RequestXmlSerializerBase<TModel> : XmlSerializer, IRequestXmlSerializer<TModel>
+    public abstract class RequestXmlSerializerBase<TRequest> : XmlSerializer, IRequestXmlSerializer<TRequest>
     {
-        public string Serialize(TModel model)
+        public string Serialize(TRequest model)
         {
             var emptyNamepsaces = new XmlSerializerNamespaces(new[] {XmlQualifiedName.Empty});
 
-            var serializer = new XmlSerializer(typeof(TModel));
+            var serializer = new XmlSerializer(typeof(TRequest));
             var settings = new XmlWriterSettings
             {
                 Indent = true,

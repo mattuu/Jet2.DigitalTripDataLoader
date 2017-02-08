@@ -10,11 +10,11 @@ namespace DigitalTripDataLoader.Service.Tests.Serializers
         [Theory, AutoMoqData]
         public void Ctor_ShouldThrowWhenAnyDependencyIsNull<T>(GuardClauseAssertion assertion)
         {
-            assertion.Verify(typeof(EmptyRequestSeriazlier).GetConstructors());
+            assertion.Verify(typeof(EmptyRequestXmlSerializer).GetConstructors());
         }
 
         [Theory, AutoMoqData]
-        public void Serialize_ShouldReturnCorrectResult(EmptyRequestSeriazlier sut)
+        public void Serialize_ShouldReturnCorrectResult(EmptyRequestXmlSerializer sut)
         {
             // act..
             var actual = sut.Serialize();
