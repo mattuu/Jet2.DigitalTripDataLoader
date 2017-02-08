@@ -36,7 +36,10 @@ namespace DigitalTripDataLoader.Console
                 {
                     foreach (var infoItem in moreInfoResponse.MoreInfo.Information)
                     {
-                        streamWriter.WriteLine($"Attribute: {infoItem.InfoName}, Value: {infoItem.InfoValue}");
+                        streamWriter.WriteLine($"Attribute: {infoItem.InfoName}");
+                        streamWriter.WriteLine($"Value: {infoItem.InfoValue}");
+                        streamWriter.WriteLine();
+
                     }
                 }
             }
