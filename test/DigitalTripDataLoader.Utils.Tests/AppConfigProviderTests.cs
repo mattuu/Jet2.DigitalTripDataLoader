@@ -18,10 +18,10 @@ namespace DigitalTripDataLoader.Utils.Tests
         public void RoomTypesECommerceMappingsPrefixes_ShouldReturnCorrectResult(string value, bool expectedResult, AppConfigProvider sut)
         {
             // act..
-            var actual = sut.RoomTypesECommerceMappingsPrefixes;
+            var actual = sut.RoomTypeECommerceMappingPrefixes;
 
             // assert..
-            var expected = ConfigurationManager.AppSettings[nameof(AppConfigProvider.RoomTypesECommerceMappingsPrefixes)].Split(',');
+            var expected = ConfigurationManager.AppSettings[nameof(AppConfigProvider.RoomTypeECommerceMappingPrefixes)].Split(',');
 
             actual.ShouldBe(expected);
         }

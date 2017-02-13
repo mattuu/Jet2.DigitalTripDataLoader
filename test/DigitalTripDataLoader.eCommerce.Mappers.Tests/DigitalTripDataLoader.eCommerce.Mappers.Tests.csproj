@@ -112,6 +112,10 @@
       <Project>{4359CAB7-951C-45F2-BA15-AE412A9088FE}</Project>
       <Name>DigitalTripDataLoader.eCommerce.Models</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\DigitalTripDataLoader.Utils\DigitalTripDataLoader.Utils.csproj">
+      <Project>{D84530E4-13B0-47BD-BB3D-F6E060F516C2}</Project>
+      <Name>DigitalTripDataLoader.Utils</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DigitalTripDataLoader.TestUtils\DigitalTripDataLoader.TestUtils.csproj">
       <Project>{688C618D-D69A-4AF4-8DD9-AEE8CCA1076D}</Project>
       <Name>DigitalTripDataLoader.TestUtils</Name>

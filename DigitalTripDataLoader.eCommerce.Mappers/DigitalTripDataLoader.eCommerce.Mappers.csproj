@@ -54,6 +54,10 @@
       <Project>{4359cab7-951c-45f2-ba15-ae412a9088fe}</Project>
       <Name>DigitalTripDataLoader.eCommerce.Models</Name>
     </ProjectReference>
+    <ProjectReference Include="..\src\DigitalTripDataLoader.Utils\DigitalTripDataLoader.Utils.csproj">
+      <Project>{D84530E4-13B0-47BD-BB3D-F6E060F516C2}</Project>
+      <Name>DigitalTripDataLoader.Utils</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

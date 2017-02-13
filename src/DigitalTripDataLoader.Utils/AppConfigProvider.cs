@@ -9,9 +9,9 @@ namespace DigitalTripDataLoader.Utils
 
         public AppConfigProvider()
         {
-            _roomTypesECommerceMappingPrefixesLazy = new Lazy<string[]>(() => ConfigurationManager.AppSettings[nameof(RoomTypesECommerceMappingsPrefixes)].Split(','));
+            _roomTypesECommerceMappingPrefixesLazy = new Lazy<string[]>(() => ConfigurationManager.AppSettings[nameof(RoomTypeECommerceMappingPrefixes)].Split(','));
         }
 
-        public string[] RoomTypesECommerceMappingsPrefixes => _roomTypesECommerceMappingPrefixesLazy.Value;
+        public string[] RoomTypeECommerceMappingPrefixes => _roomTypesECommerceMappingPrefixesLazy.Value;
     }
 }

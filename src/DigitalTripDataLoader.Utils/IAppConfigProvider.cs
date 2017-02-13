@@ -2,6 +2,6 @@
 {
     public interface IAppConfigProvider
     {
-        string[] RoomTypesECommerceMappingsPrefixes { get; }
+        string[] RoomTypeECommerceMappingPrefixes { get; }
     }
 }
