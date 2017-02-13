@@ -91,7 +91,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AutoMoqDataAttribute.cs" />
+    <Compile Include="MoreInfoToPropertyModelMapperTests.cs" />
     <Compile Include="PropertyMapperTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -111,6 +111,10 @@
     <ProjectReference Include="..\..\src\DigitalTripDataLoader.eCommerce.Models\DigitalTripDataLoader.eCommerce.Models.csproj">
       <Project>{4359CAB7-951C-45F2-BA15-AE412A9088FE}</Project>
       <Name>DigitalTripDataLoader.eCommerce.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DigitalTripDataLoader.TestUtils\DigitalTripDataLoader.TestUtils.csproj">
+      <Project>{688C618D-D69A-4AF4-8DD9-AEE8CCA1076D}</Project>
+      <Name>DigitalTripDataLoader.TestUtils</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

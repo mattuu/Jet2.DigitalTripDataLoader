@@ -1,4 +1,5 @@
 using DigitalTripDataLoader.Service.Serializers;
+using DigitalTripDataLoader.TestUtils;
 using Ploeh.AutoFixture.Idioms;
 using Shouldly;
 using Xunit;

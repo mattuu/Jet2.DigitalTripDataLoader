@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IMapper.cs" />
+    <Compile Include="MoreInfoToPropertyModelMapper.cs" />
     <Compile Include="PropertyMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

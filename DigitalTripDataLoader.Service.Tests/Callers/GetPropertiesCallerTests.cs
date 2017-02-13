@@ -1,4 +1,5 @@
 ﻿using DigitalTripDataLoader.Service.Callers;
+using DigitalTripDataLoader.TestUtils;
 using Ploeh.AutoFixture.Idioms;
 using Xunit;
 
