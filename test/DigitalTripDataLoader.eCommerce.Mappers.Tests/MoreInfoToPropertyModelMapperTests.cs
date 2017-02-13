@@ -17,6 +17,22 @@ namespace DigitalTripDataLoader.eCommerce.Mappers.Tests
         }
 
         [Theory, AutoMoqData]
+        public void Map_ShouldPopulate_PropertyId(MoreInfo moreInfo, InfoItem propertyIdInfoItem, int propertyIdInfoValue, MoreInfoToPropertyModelMapper sut)
+        {
+            // arrange..
+            propertyIdInfoItem.InfoName = MoreInfoToPropertyModelMapper.PropertyIdInfoName;
+            propertyIdInfoItem.InfoValue = propertyIdInfoValue.ToString();
+            moreInfo.Information[0] = propertyIdInfoItem;
+
+            // act..
+            var actual = sut.Map(moreInfo);
+
+            // assert..
+            actual.PropertyId.ShouldBe(propertyIdInfoValue);
+        }
+
+
+        [Theory, AutoMoqData]
         public void Map_ShouldPopulate_LocationId(MoreInfo moreInfo, InfoItem locationIdInfoItem, int locationIdInfoValue, MoreInfoToPropertyModelMapper sut)
         {
             // arrange..
@@ -43,6 +59,21 @@ namespace DigitalTripDataLoader.eCommerce.Mappers.Tests
 
             // assert..
             actual.Description.ShouldBe(descriptionInfoItem.InfoValue);
+        }
+
+        [Theory, AutoMoqData]
+        public void Map_ShouldPopulate_Rooms(MoreInfo moreInfo, MoreInfoToPropertyModelMapper sut)
+        {
+            // arrange..
+
+            //descriptionInfoItem.InfoName = MoreInfoToPropertyModelMapper.DescriptionInfoName;
+            //moreInfo.Information[0] = descriptionInfoItem;
+
+            //// act..
+            //var actual = sut.Map(moreInfo);
+
+            //// assert..
+            //actual.Description.ShouldBe(descriptionInfoItem.InfoValue);
         }
 
     }
