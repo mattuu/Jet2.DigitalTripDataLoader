@@ -1,8 +1,5 @@
 ﻿using DigitalTripDataLoader.Service.Callers;
-using DigitalTripDataLoader.Service.Serializers;
-using Moq;
 using Ploeh.AutoFixture.Idioms;
-using Ploeh.AutoFixture.Xunit2;
 using Xunit;
 
 namespace DigitalTripDataLoader.Service.Tests.Callers
@@ -14,7 +11,5 @@ namespace DigitalTripDataLoader.Service.Tests.Callers
         {
             assertion.Verify(typeof(GetPropertiesCaller).GetConstructors());
         }
-
-       
     }
 }
