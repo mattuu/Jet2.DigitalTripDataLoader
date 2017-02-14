@@ -2,6 +2,7 @@
 using System.IO;
 using System.Net;
 using System.Security.Authentication;
+using System.Threading.Tasks;
 using System.Xml.Serialization;
 using DigitalTripDataLoader.Models.Response;
 using DigitalTripDataLoader.Service.Serializers;
@@ -37,7 +38,7 @@ namespace DigitalTripDataLoader.Service.Callers
             }
         }
 
-        public virtual TResponse Call(TInputData data = default(TInputData))
+        public virtual async Task<TResponse> Call(TInputData data = default(TInputData))
         {
             var body = _requestSerializer.Serialize(data);
 
@@ -62,7 +63,7 @@ namespace DigitalTripDataLoader.Service.Callers
                 {
                     using (var reader = new StreamReader(responseStream))
                     {
-                        var responseString = reader.ReadToEnd();
+                        var responseString = await reader.ReadToEndAsync();
 
                         using (TextReader textReader = new StringReader(responseString))
                         {
