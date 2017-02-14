@@ -27,6 +27,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigitalTripDataLoader.Utils
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigitalTripDataLoader.Utils.Tests", "test\DigitalTripDataLoader.Utils.Tests\DigitalTripDataLoader.Utils.Tests.csproj", "{F89F6F46-7D22-43DF-94D1-3C22F1346E05}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigitalTripDataLoader.eCommerce.Services", "src\DigitalTripDataLoader.eCommerce.Services\DigitalTripDataLoader.eCommerce.Services.csproj", "{1A5D1014-8FE0-4187-BA92-8B2D55301C33}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigitalTripDataLoader.eCommerce.Services.Tests", "test\DigitalTripDataLoader.eCommerce.Services.Tests\DigitalTripDataLoader.eCommerce.Services.Tests.csproj", "{056D5FAF-4B92-4DEE-A41C-221FC5895736}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -73,6 +77,14 @@ Global
 		{F89F6F46-7D22-43DF-94D1-3C22F1346E05}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F89F6F46-7D22-43DF-94D1-3C22F1346E05}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F89F6F46-7D22-43DF-94D1-3C22F1346E05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A5D1014-8FE0-4187-BA92-8B2D55301C33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A5D1014-8FE0-4187-BA92-8B2D55301C33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A5D1014-8FE0-4187-BA92-8B2D55301C33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A5D1014-8FE0-4187-BA92-8B2D55301C33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{056D5FAF-4B92-4DEE-A41C-221FC5895736}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{056D5FAF-4B92-4DEE-A41C-221FC5895736}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{056D5FAF-4B92-4DEE-A41C-221FC5895736}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{056D5FAF-4B92-4DEE-A41C-221FC5895736}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -88,5 +100,7 @@ Global
 		{688C618D-D69A-4AF4-8DD9-AEE8CCA1076D} = {23B20D05-3A53-4FA5-960B-9198E2497CFB}
 		{D84530E4-13B0-47BD-BB3D-F6E060F516C2} = {3A5D1988-820B-4154-BAF1-E00FD1E9C6A7}
 		{F89F6F46-7D22-43DF-94D1-3C22F1346E05} = {23B20D05-3A53-4FA5-960B-9198E2497CFB}
+		{1A5D1014-8FE0-4187-BA92-8B2D55301C33} = {3A5D1988-820B-4154-BAF1-E00FD1E9C6A7}
+		{056D5FAF-4B92-4DEE-A41C-221FC5895736} = {23B20D05-3A53-4FA5-960B-9198E2497CFB}
 	EndGlobalSection
 EndGlobal

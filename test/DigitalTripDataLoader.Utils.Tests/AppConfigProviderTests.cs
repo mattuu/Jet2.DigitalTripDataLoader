@@ -1,6 +1,7 @@
-﻿using System.Configuration;
+﻿using System;
+using System.Configuration;
 using DigitalTripDataLoader.TestUtils;
-using Ploeh.AutoFixture.Idioms;
+using Ploeh.AutoFixture.Xunit2;
 using Shouldly;
 using Xunit;
 
@@ -9,13 +10,7 @@ namespace DigitalTripDataLoader.Utils.Tests
     public class AppConfigProviderTests
     {
         [Theory, AutoMoqData]
-        public void Ctor_ShouldThrowWhenAnyDependencyIsNull<T>(GuardClauseAssertion assertion)
-        {
-            assertion.Verify(typeof(AppConfigProvider).GetConstructors());
-        }
-
-        [Theory, AutoMoqData]
-        public void RoomTypesECommerceMappingsPrefixes_ShouldReturnCorrectResult(string value, bool expectedResult, AppConfigProvider sut)
+        public void RoomTypesECommerceMappingsPrefixes_ShouldReturnCorrectResult(AppConfigProvider sut)
         {
             // act..
             var actual = sut.RoomTypeECommerceMappingPrefixes;
@@ -23,6 +18,22 @@ namespace DigitalTripDataLoader.Utils.Tests
             // assert..
             var expected = ConfigurationManager.AppSettings[nameof(AppConfigProvider.RoomTypeECommerceMappingPrefixes)].Split(',');
 
+            actual.ShouldBe(expected);
+        }
+
+        [Theory, AutoData]
+        public void ECommercePropertyMappingEndpoint_ShouldReturnCorrectResult(string key)
+        {
+            // arrange..
+            const string uriString = "http://server.com";
+            var sut = new AppConfigProvider(_ => uriString);
+
+            var expected = new Uri(uriString);
+
+            // act..
+            var actual = sut.ECommercePropertyMappingEndpoint;
+
+            // assert..
             actual.ShouldBe(expected);
         }
     }
